@@ -1,0 +1,14 @@
+# Ignorar la carpeta .vs
+.vs/
+
+# Ignorar los binarios
+bin/
+obj/
+
+# Ignorar los paquetes NuGet
+*.nupkg
+# Ignorar el directorio de paquetes de NuGet
+# NuGet v3
+.nuget/
+# NuGet v2
+packages/
