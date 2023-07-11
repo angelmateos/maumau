@@ -1,4 +1,5 @@
 using MauMau.core;
+using System.Text;
 using Xunit.Abstractions;
 
 namespace MauMau.core.test
@@ -82,6 +83,56 @@ namespace MauMau.core.test
 
             Assert.Equal(2, dg.Count);
 
+
+        }
+
+        [Fact]
+        public void Shuffle()
+        {
+            Deck d = new Deck(true, 2, 1);
+            Deck d2 = new Deck(true, 2, 1);
+
+            StringBuilder stringBuilder = new StringBuilder();
+            string line = new string('-', 20);
+
+            d.Shuffle();
+            foreach (var card in d)
+            {
+                stringBuilder.Append(card.Id());
+                stringBuilder.Append(",");
+            }
+            output.WriteLine(stringBuilder.ToString());
+            output.WriteLine(line);
+
+            stringBuilder.Clear();
+            d2.Shuffle();
+            foreach (var card in d2)
+            {
+                stringBuilder.Append(card.Id());
+                stringBuilder.Append(",");
+            }
+            output.WriteLine(stringBuilder.ToString());
+            output.WriteLine(line);
+
+            stringBuilder.Clear();
+            d.Shuffle();
+            foreach (var card in d)
+            {
+                stringBuilder.Append(card.Id());
+                stringBuilder.Append(",");
+            }
+            output.WriteLine(stringBuilder.ToString());
+            output.WriteLine(line);
+
+            stringBuilder.Clear();
+            d2.Shuffle();
+            foreach (var card in d2)
+            {
+                stringBuilder.Append(card.Id());
+                stringBuilder.Append(",");
+            }
+            output.WriteLine(stringBuilder.ToString());
+            output.WriteLine(line);
 
         }
 
