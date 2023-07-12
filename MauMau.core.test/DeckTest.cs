@@ -90,7 +90,7 @@ namespace MauMau.core.test
         public void Shuffle()
         {
             Deck d = new Deck(true, 2, 1);
-            Deck d2 = new Deck(true, 2, 1);
+            Deck d2 = new Deck(true, 2, 2);
 
             StringBuilder stringBuilder = new StringBuilder();
             string line = new string('-', 20);

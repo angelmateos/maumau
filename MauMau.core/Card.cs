@@ -4,8 +4,8 @@ namespace MauMau.core
 {
     public class Card
     {
-        public eSuit Suit;
-        public eCardNumber CardNumber;
+        public eSuit Suit { get; }
+        public eCardNumber CardNumber { get; }
 
         public Card(eSuit suit, eCardNumber cardNumber)
         {
