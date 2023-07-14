@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MauMau.core
+namespace MauMau.core.Model
 {
     public enum eCardNumber
-    {      
+    {
         Joker = 0,
         Ace = 1,
         Two = 2,
@@ -20,6 +20,6 @@ namespace MauMau.core
         Nine = 9,
         Jack = 10,
         Knight = 11,
-        King = 12           
+        King = 12
     }
 }

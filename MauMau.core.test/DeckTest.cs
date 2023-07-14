@@ -1,4 +1,4 @@
-using MauMau.core;
+using MauMau.core.Model;
 using System.Text;
 using Xunit.Abstractions;
 

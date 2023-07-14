@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 
-namespace MauMau.core
+namespace MauMau.core.Model
 {
     public class Card
     {
@@ -20,18 +20,18 @@ namespace MauMau.core
 
         public string Id()
         {
-            switch (this.Suit)
+            switch (Suit)
             {
                 case eSuit.NoSuit:
                     return "JK";
                 case eSuit.Cups:
-                    return $"{(int)this.CardNumber}Cp";
+                    return $"{(int)CardNumber}Cp";
                 case eSuit.Golds:
-                    return $"{(int)this.CardNumber}Gd";
+                    return $"{(int)CardNumber}Gd";
                 case eSuit.Swords:
-                    return $"{(int)this.CardNumber}Sw";
+                    return $"{(int)CardNumber}Sw";
                 case eSuit.Clubs:
-                    return $"{(int)this.CardNumber}Cb";
+                    return $"{(int)CardNumber}Cb";
                 default:
                     return string.Empty;
             }
@@ -39,8 +39,8 @@ namespace MauMau.core
 
         public override string ToString()
         {
-            string result = (this.Suit == eSuit.NoSuit) ? "Joker" : string.Format("{0} of {1}", this.CardNumber, this.Suit);
-            return $"{result} ({this.Id()})";
+            string result = Suit == eSuit.NoSuit ? "Joker" : string.Format("{0} of {1}", CardNumber, Suit);
+            return $"{result} ({Id()})";
         }
     }
 }

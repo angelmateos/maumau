@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MauMau.core
+namespace MauMau.core.Model
 {
     public class Player
     {
 
         public Player(string name)
         {
-            this.Name = name;
+            Name = name;
         }
 
         public string Name { get; }

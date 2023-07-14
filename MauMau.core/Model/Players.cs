@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MauMau.core
+namespace MauMau.core.Model
 {
-    public class Players: List<Player>
-    {        
+    public class Players : List<Player>
+    {
 
     }
 }
