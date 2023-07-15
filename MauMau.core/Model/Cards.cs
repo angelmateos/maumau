@@ -23,6 +23,23 @@ namespace MauMau.core.Model
 
         }
 
+        public Card GetCard()
+        {
+            Card c = this[this.Count-1];
+            this.Remove(c);
+            return c;
+        }
 
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (var card in this)
+            {
+                stringBuilder.Append(card.Id());
+                stringBuilder.Append(",");
+            }
+            stringBuilder.Remove(stringBuilder.Length - 1, 1);
+            return stringBuilder.ToString();
+        }
     }
 }

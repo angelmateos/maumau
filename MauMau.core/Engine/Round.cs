@@ -10,20 +10,38 @@ namespace MauMau.core.Engine
     public class Round
     {
 
-        public Round(Deck d, Players players, int roundNumber)
+        public Round(Game game)
         {
 
             Stack = new Cards();
-            Stack.AddRange(d);
+            Stack.AddRange(game.Deck);
+            StackIsShuffled = false;
             Discarded = new Cards();
-            Players = players;
+            Players = game.Players;
+            PlayerTurn = Players.Count() % game.RoundNumber;
+            State = eRoundState.Created;
 
         }
 
+
         public Cards Stack { get; }
+        public bool StackIsShuffled { get; internal set; }
         public Cards Discarded { get; }
         public Players Players { get; }
 
+        public int PlayerTurn { get; private set; }
+
+
+        public eRoundState State { get; set; }
+        public enum eRoundState
+        {
+            Created,
+            Shuffled,
+            Cutted,
+            CardsDealt,
+            Playing,
+            Close,
+        }
 
     }
 }

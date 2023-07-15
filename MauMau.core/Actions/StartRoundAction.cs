@@ -9,18 +9,23 @@ using MauMau.core.Engine;
 namespace MauMau.core.Actions
 {
     public class StartRoundAction : GameAction
-        {  
+        {
+        public const string NAME = "Start Round";
         public string Name
             {
                 get
                 {
-                    return "Start Round";
+                    return NAME;
                 }
             }
-        public bool ActionEnabled(Game game) { return true; }
+        public bool IsEnabled(Game game) 
+            {
+            return game.Round == null;
+            }
 
-        public void Action(Game game)
+        public void Execute(Game game)
         {
+            game.StartRound();
         }
 
     }

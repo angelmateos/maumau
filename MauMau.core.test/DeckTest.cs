@@ -96,42 +96,22 @@ namespace MauMau.core.test
             string line = new string('-', 20);
 
             d.Shuffle();
-            foreach (var card in d)
-            {
-                stringBuilder.Append(card.Id());
-                stringBuilder.Append(",");
-            }
-            output.WriteLine(stringBuilder.ToString());
+            output.WriteLine(d.ToString());
             output.WriteLine(line);
 
             stringBuilder.Clear();
             d2.Shuffle();
-            foreach (var card in d2)
-            {
-                stringBuilder.Append(card.Id());
-                stringBuilder.Append(",");
-            }
-            output.WriteLine(stringBuilder.ToString());
+            output.WriteLine(d2.ToString());
             output.WriteLine(line);
 
             stringBuilder.Clear();
             d.Shuffle();
-            foreach (var card in d)
-            {
-                stringBuilder.Append(card.Id());
-                stringBuilder.Append(",");
-            }
-            output.WriteLine(stringBuilder.ToString());
+            output.WriteLine(d.ToString());
             output.WriteLine(line);
 
             stringBuilder.Clear();
             d2.Shuffle();
-            foreach (var card in d2)
-            {
-                stringBuilder.Append(card.Id());
-                stringBuilder.Append(",");
-            }
-            output.WriteLine(stringBuilder.ToString());
+            output.WriteLine(d2.ToString());
             output.WriteLine(line);
 
         }

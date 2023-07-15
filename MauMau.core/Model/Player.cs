@@ -16,6 +16,6 @@ namespace MauMau.core.Model
 
         public string Name { get; }
 
-
+        public Cards Hand { get;  } = new Cards();
     }
 }

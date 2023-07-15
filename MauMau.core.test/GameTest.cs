@@ -37,12 +37,45 @@ namespace MauMau.core.test
 
 
             players.Add(new Player("Player2"));
+            players.Add(new Player("Player3"));
             game = new Game(deck, players);
 
             Assert.Equal(players, game.Players);
             Assert.Equal(deck, game.Deck);
 
+
         }
 
+        [Fact] 
+        public void CreateRoundTest()
+        {
+            Players players = new Players() { new Player("Player1"), new Player("Player2") , new Player("Player3") };
+            Deck deck = new Deck(true, 0, 1);
+            Game game = new Game(deck, players);
+
+            game.ExecuteAction(Actions.StartRoundAction.NAME);
+            Assert.Equal(0, game.Round.PlayerTurn);
+
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                game.ExecuteAction(Actions.StartRoundAction.NAME);
+            });
+
+            game.ExecuteAction(Actions.ShuffleAction.NAME);
+            game.ExecuteAction(Actions.ShuffleAction.NAME);
+
+            output.WriteLine(game.Round.Stack.ToString());
+            game.ExecuteAction(Actions.CutStackAction.NAME);
+            output.WriteLine(game.Round.Stack.ToString());
+
+            game.ExecuteAction(Actions.DealAction.NAME);
+            foreach(Player player in game.Players)
+            {
+                output.WriteLine(player.Hand.ToString());
+            }
+            output.WriteLine(game.Round.Stack.ToString() );
+
+
+        }
     }
 }

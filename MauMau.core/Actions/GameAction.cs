@@ -6,9 +6,9 @@ namespace MauMau.core.Actions
     {
         string Name { get; }
 
-        bool ActionEnabled(Game game);
+        bool IsEnabled(Game game);
 
-        void Action(Game game);
+        void Execute(Game game);
 
     }
 }
